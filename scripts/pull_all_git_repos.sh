@@ -16,6 +16,6 @@ for i in $(ls); do
     cd $i
     printf "\n"$i"\n"
     git checkout master
-    git pull
+    git pull --ff-only
     cd ../
 done

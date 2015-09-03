@@ -7,6 +7,7 @@
 
 if [ $# -ne 2 ]; then
     echo usage: $0 label_name repo_name
+    echo eg: $0 approve_this myorg/myrepo
     exit
 fi
 
@@ -20,5 +21,5 @@ STR='{"name":"'$1'","color":"009800"}'
 
 echo "attempting to add: "$STR
 curl --user "$GITUSER:$GITPASS" --include --request POST --data $STR \
- "https://api.github.com/repos/$GITUSER/$2/labels"
+ "https://api.github.com/repos/$2/labels"
 

@@ -12,7 +12,7 @@ if [ $# -ne 2 ]; then
 fi
 
 STR=`which curl`
-if [ "$STR" = "" ]; then
+if [ "$STR" == "" ]; then
     echo "Sorry, curl needs to be installed first"
     exit
 fi

@@ -6,7 +6,7 @@ if [ -z "$1" ]; then
 fi
 
 STR=`which git`
-if [ "$STR" = "" ]; then
+if [ "$STR" == "" ]; then
     echo "Sorry, git needs to be installed first"
     exit
 fi

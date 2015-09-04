@@ -17,9 +17,9 @@ if [ "$STR" = "" ]; then
     exit
 fi
 
-STR='{"name":"'$1'","color":"009800"}'
+DATA='{"name":"'$1'","color":"009800"}'
 
-echo "attempting to add: "$STR
-curl --user "$GITUSER:$GITPASS" --include --request POST --data $STR \
+echo "attempting to add: "$DATA
+curl --user "$GITUSER:$GITPASS" --include --request POST --data $DATA \
  "https://api.github.com/repos/$2/labels"
 

@@ -15,7 +15,7 @@ cd $1
 for i in $(ls); do
     cd $i
     printf "\n"$i"\n"
-    git checkout master
-    git pull --ff-only
+    git checkout master |grep -v up-to-date
+    git pull --ff-only |grep -v Already
     cd ../
 done

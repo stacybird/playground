@@ -16,6 +16,6 @@ for i in $(ls); do
     cd $i
     printf "\n"$i"\n"
     git checkout master |grep -v up-to-date
-    git pull --ff-only |grep -v Already
+    git pull --ff-only |grep -v Already|grep -v Current
     cd ../
 done

@@ -16,5 +16,6 @@ for i in $(ls); do
     cd $i
     printf "\n"$i"\n"
     git remote prune origin
+    git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d
     cd ../
 done

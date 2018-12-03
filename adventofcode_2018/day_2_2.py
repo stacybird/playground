@@ -1,4 +1,4 @@
-# Advent of code 2.1
+# Advent of code 2.2
 # Happy Advent!
 with open("day_2_1.txt") as f:
     string_array = [line.rstrip() for line in f]

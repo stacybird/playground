@@ -11,7 +11,7 @@ if [ "$STR" == "" ]; then
     exit
 fi
 
-ssh-add -l
+ssh-add -l > /dev/null 2>&1
 if [ $? == 1 ]; then
     echo "Please ssh-add your key before pulling repos in an automated fashion"
     exit

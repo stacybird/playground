@@ -11,6 +11,12 @@ if [ "$STR" == "" ]; then
     exit
 fi
 
+ssh-add -l
+if [ $? == 1 ]; then
+    echo "Please ssh-add your key before pulling repos in an automated fashion"
+    exit
+fi
+
 PWD=`pwd`
 cd $1
 for i in $( find $1 -name ".git" | sort | sed 's/....$//' ); do

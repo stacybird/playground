@@ -18,7 +18,6 @@ if [ $? == 1 ]; then
 fi
 
 PWD=`pwd`
-cd $1
 for i in $( find $1 -name ".git" | sort | sed 's/....$//' ); do
     cd $i
     printf "\n"$i"\n"

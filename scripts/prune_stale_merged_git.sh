@@ -11,11 +11,18 @@ if [ "$STR" == "" ]; then
     exit
 fi
 
-cd $1
-for i in $(ls); do
+ssh-add -l
+if [ $? == 1 ]; then
+    echo "Please ssh-add your key before pulling repos in an automated fashion"
+    exit
+fi
+
+PWD=`pwd`
+for i in $( find $1 -name ".git" | sort | sed 's/....$//' ); do
     cd $i
     printf "\n"$i"\n"
     git remote prune origin
     git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d
-    cd ../
 done
+cd $PWD
+

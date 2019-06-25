@@ -11,11 +11,13 @@ if [ "$STR" == "" ]; then
     exit
 fi
 
+PWD=`pwd`
 cd $1
-for i in $(ls); do
+for i in $( find $1 -name ".git" | sort | sed 's/....$//' ); do
     cd $i
     printf "\n"$i"\n"
     git checkout master |grep -v up-to-date
     git pull --ff-only |grep -v Already|grep -v Current
-    cd ../
 done
+cd $PWD
+

@@ -1,0 +1,11 @@
+# todo: xcode setup to get git
+# todo: git cli auto complete
+# todo: cli prompt
+
+git config --global pull.ff only
+git config --global fetch.prune true
+git config --global diff.colorMoved zebra
+
+# homebrew https://brew.sh/
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/opt/homebrew/bin/brew shelenv)"' >> ~/.zprofile

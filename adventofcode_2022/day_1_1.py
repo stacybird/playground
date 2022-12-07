@@ -12,4 +12,4 @@ for i in array:
     else:
         array_sums[j] = array_sums[j] + int(i)
 print("this elf is carrying the most calories:")
-print(array_sums.index(max(array_sums))+1)
+print(max(array_sums))

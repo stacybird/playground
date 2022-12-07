@@ -11,8 +11,5 @@ for i in array:
         array_sums.insert(j,0)
     else:
         array_sums[j] = array_sums[j] + int(i)
-# array_sum = sum(num_array)
-print(array)
-print(array_sums)
-print(max(array_sums))
-print(array_sums.index(max(array_sums)))
+print("this elf is carrying the most calories:")
+print(array_sums.index(max(array_sums))+1)
